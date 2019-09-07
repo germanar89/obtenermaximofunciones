@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int obtenermaximo(int vec[],int cant);
+int obtenerubicacion(int vec[],int cant);
+int main()
+{
+   int numeros[3];
+   int suma = 0;
+   int mayor;
+
+   int ubicacion;
+
+   for (int i=0; i < 3; i++)
+   {
+       printf("ingrese un numero: ");
+        scanf("%d", &numeros[i]);
+
+   }
+   for (int i=0; i < 3; i++)
+   {
+       printf("%d \n", numeros[i]);
+
+
+   }
+   for (int i=0; i < 3; i++)
+   {
+       suma += numeros[i];
+
+}
+
+
+
+   mayor = obtenermaximo(numeros,3);
+   ubicacion = obtenerubicacion(numeros,3);
+ printf("el mayor numero es %d \n", mayor);
+ printf("La ubicacion del mayor numero es %d \n", ubicacion);
+ printf("la suma de los numeros es %d \n", suma);
+    return 0;
+
+
+
+}
+int obtenermaximo(int vec[],int cantidad)
+{
+    int mayor;
+
+    for (int i=0; i < cantidad; i++)
+   {
+
+
+       if (i==0)
+       {
+           mayor = vec[i];
+
+       }else if (vec[i] > mayor)
+       {
+
+           mayor = vec[i];
+       }
+}
+return mayor;
+}
+int obtenerubicacion(int vec[],int cantidad)
+{
+ int ubicacion;
+ int mayor;
+
+ for (int i=0; i < cantidad; i++)
+   {
+
+
+       if (i==0)
+       {
+           mayor = vec[i];
+
+       }else if (vec[i] > mayor)
+       {
+
+           mayor = vec[i];
+       }
+   }
+for (int i=0; i < cantidad; i++)
+   {
+
+       if (mayor == vec[i])
+       {
+        ubicacion = i;
+       }
+   }
+    return ubicacion;
+
+}
